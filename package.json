@@ -1,0 +1,20 @@
+{
+  "name": "mynode",
+  "version": "1.0.0",
+  "description": "My Node JS",
+  "main": "exports.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itstoreall/mynode.git"
+  },
+  "keywords": [],
+  "author": "Serhii Stanislav <serhiistanislav@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/itstoreall/mynode/issues"
+  },
+  "homepage": "https://github.com/itstoreall/mynode#readme"
+}
