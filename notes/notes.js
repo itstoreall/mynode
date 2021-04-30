@@ -17,6 +17,8 @@
 07.5 fs.unlink(path, callback) - удаление файла (удаляет ссылку на файл).
 08. require - is sync modules, and imports - is async modules
 
+09. nextTick() blocks eventloop
+
 ------------------------------------------- */
 
 /* ===========================================
