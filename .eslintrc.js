@@ -1,4 +1,5 @@
 export default {
+  parser: '@babel/eslint-parser',
   env: {
     es2021: true,
     node: true,
@@ -12,6 +13,7 @@ export default {
   rules: {
     semi: [1, 'always'],
     'comma-dangle': 'off',
+    'space-before-function-parent': 0,
     // 'comma-style': [2, 'last'],
   },
 };
