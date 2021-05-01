@@ -1,8 +1,8 @@
-import * as fs from 'fs/promises';
+import { access } from 'fs/promises';
 
 export const isAccessible = async (path) => {
   try {
-    await fs.access(path);
+    await access(path);
     return true;
   } catch (e) {
     return false;

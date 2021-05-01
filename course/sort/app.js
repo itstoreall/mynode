@@ -1,9 +1,3 @@
-import * as fs from 'fs/promises';
-import { isAccessible } from './utils/accessible.js';
-import program from './utils/commander.js';
-import { handleError } from './utils/handleError';
-
-/*
 import { Command } from 'commander/esm.mjs';
 import SortFiles from './module/sort.js';
 
@@ -30,4 +24,3 @@ try {
 }
 
 console.log('Done');
-*/
