@@ -19,11 +19,20 @@
 
 09. nextTick() blocks eventloop
 
-10. self-calling function
+10. self-calling function:
 
 (async () => {
   await ...
   ))().then(() => {})
+
+11. .gitkeep - файл внутри пустой папки разрешает хранить ее на github
+12. Чтобы nodemon не перезагружался бесконечно:
+
+"nodemonConfig": {
+    "ignore": [
+      "data/*.*"
+    ]
+  },
 
 ------------------------------------------- */
 
@@ -43,5 +52,14 @@ node -v (check the version of the node.js)
 npm init -y (creates an empty package.json)
 npx eslint --init (ESLint)
 npm i commander -E (парсит строку запроса)
+npm i @babel/core -D
+npm i @babel/eslint-parser -D
+npm i @babel/plugin-proposal-class-properties -D
+npm i @babel/plugin-proposal-private-methods -D
+npm i @babel/plugin-syntax-top-level-await -D
+npm install --save-dev nodemon 
+npm i ejs -E 
+npm i cors
+npm i joi
 
 ------------------------------------------- */

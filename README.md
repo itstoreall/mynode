@@ -7,3 +7,4 @@ My Node JS 👾
 - ESLint (npx eslint --init)
 - commander
 - babel
+- nodemon
