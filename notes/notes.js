@@ -48,8 +48,8 @@
 /* ===========================================
 ** Commands
 
+mkdir myapp (create folder)
 node -v (check the version of the node.js)
-npm init -y (creates an empty package.json)
 npx eslint --init (ESLint)
 npm i commander -E (парсит строку запроса)
 npm i @babel/core -D
@@ -57,10 +57,11 @@ npm i @babel/eslint-parser -D
 npm i @babel/plugin-proposal-class-properties -D
 npm i @babel/plugin-proposal-private-methods -D
 npm i @babel/plugin-syntax-top-level-await -D
-npm install --save-dev nodemon 
 npm i ejs -E 
 npm i cors
 npm i joi
 npm i (Устанавливает модули после Fork перед радотой)
+npm init -y (creates an empty package.json)
+npm install --save-dev nodemon 
 
 ------------------------------------------- */

@@ -1,14 +1,15 @@
 # mynode
 
-My Node JS 👾
+my Node JS 👾
 
 **_Use:_**
 
-- ESLint (npx eslint --init)
-- commander
 - babel
-- nodemon
 - colors
+- commander
+- eslint (npx eslint --init)
+- express
+- nodemon
 
 ### Helpers:
 
