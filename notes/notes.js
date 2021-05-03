@@ -26,7 +26,7 @@
   ))().then(() => {})
 
 11. .gitkeep - файл внутри пустой папки разрешает хранить ее на github
-12. Чтобы nodemon не перезагружался бесконечно:
+12. Чтобы nodemon не перезагружался бесконечно (in package.json):
 
 "nodemonConfig": {
     "ignore": [
@@ -61,5 +61,6 @@ npm install --save-dev nodemon
 npm i ejs -E 
 npm i cors
 npm i joi
+npm i (Устанавливает модули после Fork перед радотой)
 
 ------------------------------------------- */

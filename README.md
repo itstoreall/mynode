@@ -8,3 +8,10 @@ My Node JS 👾
 - commander
 - babel
 - nodemon
+- colors
+
+### Helpers:
+
+```
+"type": "module",
+```

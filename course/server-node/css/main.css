@@ -1,0 +1,9 @@
+h3 {
+  color: blue;
+}
+
+.picture {
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 30px;
+}
