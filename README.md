@@ -7,6 +7,7 @@ my Node JS 👾
 - babel
 - colors
 - commander
+- ejs
 - eslint (npx eslint --init)
 - express
 - nodemon
