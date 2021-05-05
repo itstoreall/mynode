@@ -193,3 +193,44 @@ Apache для формата журналов:
 - 504: Gateway Timeout - Сервер, как шлюз не может получить ответ вовремя
 
 ------------------------------------------- */
+
+/* ===========================================
+** URL for REST API (best prectices)
+
+01.1 Add new customer to the sistem:
+HTTP метод: POST
+URL: http://www.example.com/customers
+
+01.2 GET, PUT or PATCH customer's data with ID 112233:
+HTTP метод: GET
+URL: http://www.example.com/customers/112233
+
+02.1 Creating new product:
+HTTP метод: POST
+URL: http://www.example.com/products
+
+02.2 GET, PUT, DELETE the product with ID 432111:
+HTTP метод: GET, PUT, DELETE
+URL: http://www.example.com/products/432111
+
+03.1 Creating new order without customer:
+HTTP метод: POST
+URL: http://www.example.com/orders
+
+03.2 Creating new order for a customer ID 332244
+HTTP метод: POST
+URL: http://www.example.com/customers/332244/orders
+
+04. Pagination
+HTTP метод: GET
+URL: http://api.example.com/resources?offset=0&limit=12
+
+05. Complex filtering by value (used ::)
+HTTP метод: GET
+URL: http://www.example.com/users?filter="name::sam|city::denver"
+
+06. Sort 
+HTTP метод: GET
+URL: http://www.example.com/users?sort=lastName|firstName|-birthdate
+
+------------------------------------------- */
