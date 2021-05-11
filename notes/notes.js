@@ -1,5 +1,51 @@
 /* ===========================================
+** Commands
+
+mkdir myapp (create folder)
+node -v (check the version of the node.js)
+
+- Удаление файла из Git репозитория
+git rm .env --cached
+git commit -m "Stopped tracking .env File"
+
+- Working with branches
+git checkout -b [branch-name] (creates new branch)
+git checkout [branch_name] (switches the branch)
+git fetch (забирает данные в локальный репозиторий)
+git pull (вливает данные из удалённой ветки в текущую ветку)
+git merge main (влить ветку main в ветку [branch name])
+
+<<<<<<< Current Change
+ ... some code
+=======
+ ... some code
+>>>>>> Incoming Change
+
+git add . (добавляем после исправления конфликта)
+git commit -m "qweqweqwe" (коммитим)
+
+- Cтянуть изменения с другой ветки
+git pull origin [имя_ветки] (стянуть изменения с ветки одного из участников)
+git add . (добавляем после исправления конфликта)
+git commit -m "qweqweqwe" (коммитим)
+- Залить изменения на удаленный main
+git merge main (находясь в своей локальной ветке пишем команду)
+
+------------------------------------------- */
+
+/* ===========================================
+** Flags
+
+-S или --save (модуль как основная зависимость)
+-D или --save-dev (модуль как доп. зависимость)
+-E (только текущая версия)
+
+------------------------------------------- */
+
+/* ===========================================
 ** Node JS
+
+00.1 throw new Error('it's an Error');
 
 01. Работает с файлами напрямую
 02. "type": "module", in package.json (ожедает в .js только импорты)
@@ -34,22 +80,39 @@
     ]
   },
 
+13.1 Install ESLint and Prettier:
+npm i eslint-config-prettier -D
+npm i eslint-plugin-json -DE
+
+13.2 Create a file at the root:
+.eslintignore
+node_modules
+
+13.3 Create a file at the root:
+.eslintrc.js
+module.exports = {
+  env: {
+    commonjs: true,
+    es2021: true,
+    node: true,
+  },
+  extends: ['standard', 'plugin:json/recommended', 'prettier'],
+  parserOptions: {
+    ecmaVersion: 12,
+  },
+  rules: {
+    semi: [1, 'always'],
+    'comma-dangle': 'off',
+    'space-before-function-paren': 'off',
+  },
+};
+
+
 ------------------------------------------- */
 
 /* ===========================================
-** Flags
+** NPM Installers
 
--S или --save (модуль как основная зависимость)
--D или --save-dev (модуль как доп. зависимость)
--E (только текущая версия)
-
-------------------------------------------- */
-
-/* ===========================================
-** Commands
-
-mkdir myapp (create folder)
-node -v (check the version of the node.js)
 npx eslint --init (ESLint)
 npm i @babel/core -D
 npm i @babel/eslint-parser -D
@@ -60,10 +123,14 @@ npm i (Устанавливает модули после Fork перед раб
 npm i commander -E (парсит строку запроса)
 npm i cors
 npm i ejs -E 
+npm i eslint-config-prettier -D
+npm i eslint-plugin-json -DE
 npm i express ejs (EJS)
 npm i joi
 npm init -y (creates an empty package.json)
 npm install --save-dev nodemon 
+npm install cors
+npm install express
 npx express-generator --view=ejs simple-express
 
 ------------------------------------------- */
