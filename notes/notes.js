@@ -120,17 +120,24 @@ npm i @babel/plugin-proposal-class-properties -D
 npm i @babel/plugin-proposal-private-methods -D
 npm i @babel/plugin-syntax-top-level-await -D
 npm i (Устанавливает модули после Fork перед работой)
+npm i bcriptjs
 npm i commander -E (парсит строку запроса)
 npm i cors
+npm i dotenv
 npm i ejs -E 
 npm i eslint-config-prettier -D
 npm i eslint-plugin-json -DE
 npm i express ejs (EJS)
 npm i joi
+npm i jsonwebtoken
+npm i mongodb
+npm i passport
+npm i passport-jwt
 npm init -y (creates an empty package.json)
 npm install --save-dev nodemon 
 npm install cors
 npm install express
+npm install mongoose --save
 npx express-generator --view=ejs simple-express
 
 ------------------------------------------- */
