@@ -120,7 +120,7 @@ npm i @babel/plugin-proposal-class-properties -D
 npm i @babel/plugin-proposal-private-methods -D
 npm i @babel/plugin-syntax-top-level-await -D
 npm i (Устанавливает модули после Fork перед работой)
-npm i bcriptjs
+npm i bcryptjs
 npm i commander -E (парсит строку запроса)
 npm i cors
 npm i dotenv
@@ -128,17 +128,35 @@ npm i ejs -E
 npm i eslint-config-prettier -D
 npm i eslint-plugin-json -DE
 npm i express ejs (EJS)
+npm i express-query-boolean
+npm i jimp
 npm i joi
 npm i jsonwebtoken
+npm i helmet
+npm i gravatar
 npm i mongodb
+npm i mongoose-paginate-v2
 npm i passport
 npm i passport-jwt
 npm init -y (creates an empty package.json)
 npm install --save-dev nodemon 
+npm install --save express-rate-limit
+npm install --save multer
+npm install --save sequelize
+npm install --save sqlite3
+npm install cloudinary
 npm install cors
 npm install express
 npm install mongoose --save
 npx express-generator --view=ejs simple-express
+npx sequelize-cli db:migrate
+npx sequelize-cli db:seed:all
+npx sequelize-cli init
+npx sequelize-cli model:generate --name Contact --attributes name:string,email:string,phone:string,favorite:boolean,address:array,account:string,owner:integer
+npx sequelize-cli model:generate --name Gender --attributes name:string
+npx sequelize-cli model:generate --name User --attributes name:string,password:string,email:string,token:string,gender:integer
+npx sequelize-cli seed:generate --name demo-genders
+
 
 ------------------------------------------- */
 
@@ -306,5 +324,70 @@ URL: http://www.example.com/users?filter="name::sam|city::denver"
 06. Sort 
 HTTP метод: GET
 URL: http://www.example.com/users?sort=lastName|firstName|-birthdate
+
+------------------------------------------- */
+
+/* ===========================================
+** SQLite scripts (DBeaver)
+
+CREATE TABLE genders (
+	id INTEGER PRIMARY KEY,
+	name VARCHAR(255),
+	created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)
+
+INSERT INTO genders
+(id, name, created_at, updated_at)
+VALUES (1, 'male', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+(2, 'female', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+(3, 'none', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+
+CREATE TABLE users (
+	id INTEGER PRIMARY KEY,
+	name VARCHAR(255),
+	email VARCHAR(255),
+	password VARCHAR(255),
+	token VARCHAR(30),
+	gender INTEGER,
+	created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	FOREIGN KEY (gender) REFERENCES genders (id)
+		ON DELETE SET NULL
+		ON UPDATE SET NULL
+);
+
+INSERT INTO users
+(name, email, password, token, gender, created_at, updated_at)
+VALUES ('Boris', 'boris@test.com', 'password', NULL, 1, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('Alina', 'alina@test.com', 'password', NULL, 2, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('Bob', 'bob@test.com', 'password', NULL, 3, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+
+CREATE TABLE contacts (
+	id INTEGER PRIMARY KEY,
+	name VARCHAR(255),
+	email VARCHAR(255),
+	phone VARCHAR(255),
+	favorite TINYINT,
+	account VARCHAR(255),
+	owner INTEGER,
+	created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	FOREIGN KEY (owner) REFERENCES users (id)
+		ON DELETE SET NULL
+		ON UPDATE SET NULL
+);
+
+INSERT INTO contacts
+(name, email, phone, favorite, account, owner, created_at, updated_at)
+VALUES ('Simon', 'simons@test.com', '0679994445', 0, 'qwe1', 1, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('Sasha', 'sasha@test.com', '0679994446', 1, 'qwe2', 2, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('Vika', 'vika@test.com', '0679994447', 0, 'qwe3', 2, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('Oleg', 'oleg@test.com', '0679994447', 0, 'qwe4', 3, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('Yura', 'yura@test.com', '0679994447', 0, 'qwe5', 3, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+
+SELECT c.id, c.name, c.email, phone, favorite, account, u.name owner, c.created_at, c.updated_at
+FROM contacts AS c
+LEFT JOIN users u ON u.id = c.owner;
 
 ------------------------------------------- */
